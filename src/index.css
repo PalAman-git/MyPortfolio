@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* make root variables for color */
+:root{
+    --color-primary:#030000;
+}
+
+.cursor{
+    /* animation:1.2s infinite steps(1) blink; */
+}
+
+@keyframes blink {
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
