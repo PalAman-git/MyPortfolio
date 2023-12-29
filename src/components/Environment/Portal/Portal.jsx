@@ -37,10 +37,6 @@ const Portal = () => {
     const trigger = document.getElementById("hero");
     const tl = useRef();
 
-    useEffect(() => {
-      console.log(trigger)
-    })
-  
     //controlling the camera with gsap
     useGSAP(() => {
       tl.current = gsap.timeline({

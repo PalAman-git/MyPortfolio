@@ -1,3 +1,131 @@
 #overlay {
     color: var(--color-primary);
 }
+
+.cursor{
+    animation: 1.2s infinite steps(1) blink;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    top: 2rem;
+}
+
+.logo{
+    margin-left: 10rem;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-right: 2rem !important;
+}
+
+.menu-items{
+    list-style: none;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+.menu-items::after{
+    content: '' ;
+    display: block ;
+    margin-top: 0.3rem;
+    position: absolute;
+    top:1.3rem;
+    left:1.3rem;
+    width:0;
+    height: 2px ;
+    background-color: #0d0d0d ;
+    transition: width .5s ;
+}
+
+.menu-items:hover::after{
+    width: 80%;
+}
+
+
+/* circular scrollDown */
+.circle{
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    /* background-color: aqua; */
+    border-radius: 50%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.arrow{
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: green; */
+    animation:1.5s infinite ease-in-out arrow;
+    z-index: 10;
+}
+
+@keyframes arrow{
+    0%,60%,100%{
+        transform: translate(-50%,-50%) translateY(0);
+    }
+    20%{
+        transform: translate(-50%,-50%) translateY(1rem);
+    }
+}
+
+.text{
+    /* position:absolute; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    animation: 10s infinite linear ghoom;
+    /* background-color: black; */
+    z-index: -1;
+    transform: scale(5,5);
+}
+
+@keyframes ghoom{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.text span{
+    position: absolute;
+    font-size: 0.6rem;
+    /* background-color: red; */
+    top: -17%;
+    left:50%;
+    transform-origin: 0 4rem;
+}
+

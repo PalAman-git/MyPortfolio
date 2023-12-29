@@ -7,6 +7,10 @@
     --color-primary:#030000;
 }
 
+html{
+    font-size: 16px;
+}
+
 .cursor{
     /* animation:1.2s infinite steps(1) blink; */
 }
@@ -19,3 +23,17 @@
         opacity: 1;
     }
 }
+
+/* Media query for screens with a maximum width of 600px */
+@media screen and (max-width: 600px) {
+    html {
+      font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+  }
+  
+  /* Media query for screens with a maximum width of 400px */
+  @media screen and (max-width: 400px) {
+    html {
+      font-size: 12px; /* Further adjust the font size for even smaller screens */
+    }
+  }

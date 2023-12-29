@@ -5,7 +5,7 @@ function App() {
   return (
     <>
      <Hero />
-     <div className="w-full h-[100vh] bg-black"></div>
+     <div className="w-full h-[100vh] bg-white"></div>
     </>
   )
 }
