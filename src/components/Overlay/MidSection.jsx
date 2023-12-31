@@ -9,6 +9,7 @@ const MidSection = ({ timeline }) => {
   useGSAP(
     () => {
       //timeline for the text going down
+      const eye = document.querySelector(".eyeContainer");
       timeline && timeline
       .to(
         ".hero-text",
@@ -21,6 +22,13 @@ const MidSection = ({ timeline }) => {
         {
           duration:2,
           y:180
+        },'a'
+      ).to(
+        eye,
+        {
+          duration:2,
+          y:-100,
+          opacity:0
         },'a'
       )
 
