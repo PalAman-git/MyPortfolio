@@ -64,7 +64,7 @@ const ScrollDown = ({timeline}) => {
 
   return (
     <>
-      <div onMouseMove={activateCircle} onMouseLeave={resetCircle} className="circle absolute bottom-[5rem]">
+      <div onMouseMove={activateCircle} onMouseLeave={resetCircle} className="circle absolute bottom-[4.5rem]">
         <img src={arrowDown} className="arrow"></img>
         <div className="text font-bold font-bebas">
           <p>

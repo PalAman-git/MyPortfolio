@@ -139,3 +139,9 @@ ul{
     transform-origin: 0 4rem;
 }
 
+/* for eyes */
+.eyeContainer{
+    left:50%;
+    transform: translate(-50%,0%);
+}
+

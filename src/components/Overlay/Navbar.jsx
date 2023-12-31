@@ -1,9 +1,10 @@
 import "./style.css";
+import Eye from './Eye'
 
 const Navbar = () => {
   return (
     <div className="navbar font-bebas tracking-widest">
-      <div className="eye"></div>
+      <Eye />
         <ul>
             <li className="menu-items"><a href="#">// About   </a></li>
             <li className="menu-items"><a href="#">// Projects</a></li>

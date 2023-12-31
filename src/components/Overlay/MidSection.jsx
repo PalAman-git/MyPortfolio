@@ -61,7 +61,7 @@ const MidSection = ({ timeline }) => {
   return (
     <div
       ref={middle}
-      className="main flex justify-start items-start flex-col absolute top-[22%]"
+      className="main flex justify-start items-start flex-col absolute top-[27%]"
     >
       <div className="hero-subtext flex justify-start font-normal text-3xl font-bebas">
         hi!
