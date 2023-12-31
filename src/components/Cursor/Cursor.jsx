@@ -19,7 +19,7 @@ const cursor = ({ cursorVarient }) => {
         trigger: overlay,
         start: "2% top",
         end: "75% top",
-        markers: true,
+        // markers: true,
         scrub: 1,
         toggleClass: { targets: ".pointer", className: "hidden" },
       },

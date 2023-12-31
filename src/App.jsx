@@ -1,5 +1,5 @@
 import "./App.css";
-import { Hero, Cursor } from "./components";
+import { Hero, Cursor,About } from "./components";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -36,7 +36,7 @@ function App() {
     <>
       <Cursor cursorVarient={cursorVarient}/>
       <Hero />
-      <div className="second w-full h-[100vh] bg-white"></div>
+
     </>
   );
 }

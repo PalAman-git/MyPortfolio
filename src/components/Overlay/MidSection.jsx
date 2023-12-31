@@ -25,10 +25,13 @@ const MidSection = ({ timeline }) => {
       )
 
 
-      //timeline for the text loading
-      const overlay = document.querySelector(".overlay");
+      //timeline for the overlayPage loading
+      const scrollDownCircle = document.querySelector(".circle");
+      const navbar = document.querySelectorAll(".navbar");
+
       revealTl.current = gsap.timeline({});
 
+      //loading animation for the text
       revealTl.current
         .fromTo(
           ".hero-text",
@@ -42,7 +45,15 @@ const MidSection = ({ timeline }) => {
             duration: 0.5,
           }
         )
-        .fromTo(".hero-subtext", { opacity: 0,y:"-100%" }, { opacity: 1,y:"0%", duration: 0.5 });
+
+        //loading animation for the subtext
+        .fromTo(".hero-subtext", { opacity: 0,y:"-100%" }, { opacity: 1,y:"0%", duration: 0.5 })
+
+        .fromTo(navbar, { opacity: 0,y:"-100%" }, { opacity: 1, y:"0%", duration: 0.5 },)
+
+        //loading animation for the scrollDownCircle
+        .fromTo(scrollDownCircle, { opacity: 0,y:"100%" }, { opacity: 1, y:"0%", duration: 1,ease:"elastic.out(2,0.4)"})
+
     },
     { scope: middle, dependencies: [timeline, revealTl] }
   );

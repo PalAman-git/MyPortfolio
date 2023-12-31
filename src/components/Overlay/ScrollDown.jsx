@@ -1,22 +1,25 @@
 import "./style.css";
 import arrowDown from "./downArrow.svg";
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const ScrollDown = ({timeline}) => {
 
-  //mouse move stuff
   const { contextSafe } = useGSAP(() => {
+    //timeline for the text going down
     timeline &&
-      timeline.to('.circle',{
-        duration:0.5,
-        y:70,
-        opacity:0,
-        ease:'power4.out'
-      },'a')
-  }, [timeline]);
+    timeline.to('.circle',{
+      duration:0.5,
+      y:70,
+      opacity:0,
+      ease:'power4.out'
+    },'a')
+        
+  },[timeline]);
 
+  
+  //mouse move stuff
   const activateCircle = contextSafe((e) => {
     //move the circle to new position
     let boundBox = e.currentTarget.getBoundingClientRect();
