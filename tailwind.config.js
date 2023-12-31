@@ -8,6 +8,7 @@ export default {
         carattere: ["Carattere", "sans-serif"],
         script :["Dancing Script", "cursive"],
         roboto:["Roboto Condensed", "sans-serif"],
+        bebas:["Bebas Neue", "cursive"],
       },
     },
   },

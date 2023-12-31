@@ -45,7 +45,7 @@ const Portal = () => {
           start: "top top",
           end: "bottom 50%",
           // markers: true,
-          scrub: 1.5,
+          scrub: 1,
           pin: true,
         },
       });
@@ -64,7 +64,7 @@ const Portal = () => {
         .to(
           camera.rotation,
           {
-            x: -0.1,
+            x: 0,
             y: 0,
             z: 0,
             duration: 4,

@@ -2,27 +2,29 @@ import "./style.css";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import ScrollDown from "./ScrollDown";
+import MidSection from "./MidSection";
 
 gsap.registerPlugin(TextPlugin);
 
 const Overlay = () => {
-  //type writer effect
   const words = [
     "Software Engineer",
     "Devops Engineer",
     "Frontend Developer",
     "Creative Developer",
   ];
-
-  const mainTimeline = useRef(null);
+  //type writer effect
+  const typeWriterTimeline = useRef(null);
   const container = useRef(null);
+
+  const [overLayTl, SetOverLayTl] = useState(null);
 
   useGSAP(
     () => {
-      mainTimeline.current = gsap.timeline({
+      typeWriterTimeline.current = gsap.timeline({
         repeat: -1,
       });
 
@@ -38,8 +40,21 @@ const Overlay = () => {
           text: word,
         });
 
-        mainTimeline.current.add(textTimeline);
+        typeWriterTimeline.current.add(textTimeline);
       });
+
+      //time line for controlling the visibility of the components on the overlay i.e Navbar, MidSection and ScrollDown
+      SetOverLayTl(
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: container.current,
+            start: "10% top",
+            end: "bottom 60%",
+            // markers: true,
+            scrub: 1,
+          },
+        })
+      );
     },
     { scope: container }
   );
@@ -51,19 +66,8 @@ const Overlay = () => {
       className="absolute select-none tracking-widest flex justify-center items-center w-full h-full flex-col z-10 px-10"
     >
       <Navbar />
-      <div className="absolute top-[23%]">
-        <div className="font-medium -mb-7 text-3xl font-roboto">hi!</div>
-        <div className="hero-text font-extrabold text-[10rem] font-script -my-5">
-          I'm Aman
-        </div>
-        <div className="hero-subtext font-medium text-3xl font-roboto">
-          I'm a creative Developer having an eye on user interactions. <br />
-          My interests include{" "}
-          <span className="typewriter font-black text-[#151515]"></span>
-          <span className="cursor font-black">|</span>
-        </div>
-      </div>
-      <ScrollDown />
+      <MidSection timeline={overLayTl}/>
+      <ScrollDown timeline={overLayTl}/>
     </div>
   );
 };

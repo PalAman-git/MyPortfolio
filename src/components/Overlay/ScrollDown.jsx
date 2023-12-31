@@ -4,10 +4,18 @@ import { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const ScrollDown = () => {
+const ScrollDown = ({timeline}) => {
 
   //mouse move stuff
-  const { contextSafe } = useGSAP(() => {}, {});
+  const { contextSafe } = useGSAP(() => {
+    timeline &&
+      timeline.to('.circle',{
+        duration:0.5,
+        y:70,
+        opacity:0,
+        ease:'power4.out'
+      },'a')
+  }, [timeline]);
 
   const activateCircle = contextSafe((e) => {
     //move the circle to new position
@@ -43,7 +51,7 @@ const ScrollDown = () => {
     const transformedText = originalText
       .split("")
       .map((char, i) => {
-        return `<span style="transform:rotate(${i * 8.6}deg)">${char}</span>`;
+        return `<span style="transform:rotate(${i * 9.5}deg)">${char}</span>`;
       })
       .join("");
 
@@ -53,12 +61,12 @@ const ScrollDown = () => {
 
   return (
     <>
-      <div onMouseMove={activateCircle} onMouseLeave={resetCircle} className="circle absolute bottom-[4rem]">
+      <div onMouseMove={activateCircle} onMouseLeave={resetCircle} className="circle absolute bottom-[5rem]">
         <img src={arrowDown} className="arrow"></img>
-        <div className="text font-medium">
+        <div className="text font-bold font-bebas">
           <p>
             {" "}
-            SCROLL DOWN &#x2022; SCROLL DOWN &#x2022; SCROLL DOWN &#x2022;{" "}
+            SCROLL &#38; EXPLORE &#x2022; SCROLL &#38; EXPLORE &#x2022;{" "}
           </p>
         </div>
       </div>

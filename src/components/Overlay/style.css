@@ -4,6 +4,7 @@
 
 .cursor{
     animation: 1.2s infinite steps(1) blink;
+    color: var(--color-darkyellow);
 }
 
 @keyframes blink{
@@ -26,10 +27,6 @@
     top: 2rem;
 }
 
-.logo{
-    margin-left: 10rem;
-}
-
 ul{
     display: flex;
     justify-content: center;
@@ -40,6 +37,7 @@ ul{
 .menu-items{
     list-style: none;
     position: relative;
+    color: var(--color-darkblack);
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -55,18 +53,31 @@ ul{
     left:1.3rem;
     width:0;
     height: 2px ;
-    background-color: #0d0d0d ;
-    transition: width .5s ;
+    background-color: var(--color-darkyellow);
+    transition: width .3s ;
+}
+
+.menu-items a{
+    text-decoration: none;
+    color: var(--color-darkblack);
 }
 
 .menu-items:hover::after{
     width: 80%;
 }
 
+.typewriter{
+    color:var(--color-darkyellow);
+}
+
+.hero-subtext{
+    font-weight: 400;
+}
 
 /* circular scrollDown */
 .circle{
     position: relative;
+    color: var(--color-darkblack);
     width: 6rem;
     height: 6rem;
     /* background-color: aqua; */
@@ -106,7 +117,6 @@ ul{
     align-items: center;
     border-radius: 50%;
     animation: 10s infinite linear ghoom;
-    /* background-color: black; */
     z-index: -1;
     transform: scale(5,5);
 }
@@ -122,7 +132,7 @@ ul{
 
 .text span{
     position: absolute;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     /* background-color: red; */
     top: -17%;
     left:50%;

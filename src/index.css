@@ -4,8 +4,16 @@
 
 /* make root variables for color */
 :root{
-    --color-primary:#030000;
+    --color-lightlack:#151515;
+    --color-darkblack:#0a0a0a;
+    --color-white:#fbfcd4;
+    --color-lightyellow:#eab539;
+    --color-darkyellow:#fc7804;
 }
+/* 
+*,::after,::before{
+  cursor: none;
+} */
 
 html{
     font-size: 16px;

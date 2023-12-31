@@ -1,0 +1,17 @@
+
+.pointer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    opacity: 1;
+    display: block;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    background-color: rgb(247, 203, 4);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition:opacity 0 ease-out;
+}
