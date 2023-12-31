@@ -1,13 +1,13 @@
 import "./style.css";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import ScrollDown from "./ScrollDown";
 import MidSection from "./MidSection";
 
-gsap.registerPlugin(TextPlugin);
 
 const Overlay = () => {
   const words = [
@@ -19,11 +19,16 @@ const Overlay = () => {
   //type writer effect
   const typeWriterTimeline = useRef(null);
   const container = useRef(null);
-
+  
   const [overLayTl, SetOverLayTl] = useState(null);
-
+  
   useGSAP(
     () => {
+      //registering the plugins
+      gsap.registerPlugin(ScrollTrigger)
+      gsap.registerPlugin(TextPlugin);
+
+      //type writer effect
       typeWriterTimeline.current = gsap.timeline({
         repeat: -1,
       });

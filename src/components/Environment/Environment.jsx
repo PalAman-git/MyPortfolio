@@ -7,7 +7,7 @@ const Environment = () => {
     <>
       <Canvas camera={{ position: [0, 0.4, 0.25], fov: 50}}>
         {/* <ambientLight intensity={0.5} /> */}
-        <color attach="background" args={['#fbfcd4']} />
+        <color attach="background" args={['#eab539']} />
         <Portal />
       </Canvas>
     </>
