@@ -1,7 +1,7 @@
 import "./App.css";
-import { Hero, About, Parallax,Footer } from "./components";
+import { Hero, About, Parallax,Footer,Cursor,Projects } from "./components";
 import { useState } from "react";
-import Cursor from "./components/Cursor/Cursor";
+
 import { useEffect } from "react";
 
 function App() {
@@ -35,10 +35,12 @@ function App() {
   return (
     <>
       <Cursor variant={variant} />
-      {/* <Hero /> */}
+      <Hero />
       <About />
       {/* <Parallax /> */}
       {/* <Footer /> */}
+      {/* <div className="w-full h-[100vh] bg-black"></div> */}
+      {/* <Projects /> */}
     </>
   );
 }
