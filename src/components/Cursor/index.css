@@ -10,7 +10,7 @@
     display: block;
     z-index: 999;
     transform: translate(-50%,-50%);
-    background-color: rgb(247, 215, 4);
+    background-color: var(--color-lightyellow);
     mix-blend-mode: difference;
     pointer-events: none;
     transition:opacity 0 ease-out;

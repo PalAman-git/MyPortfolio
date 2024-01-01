@@ -3,7 +3,7 @@ import Eye from './Eye'
 
 const Navbar = () => {
   return (
-    <div className="navbar font-bebas tracking-widest">
+    <div className="navbar font-bebas tracking-widest top-4">
       <Eye />
         <ul>
             <li className="menu-items"><a href="#">// About   </a></li>

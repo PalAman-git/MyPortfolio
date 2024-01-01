@@ -5,7 +5,7 @@
 /* make root variables for color */
 :root{
     --color-lightlack:#151515;
-    --color-darkblack:#0a0a0a;
+    --color-darkblack:#000000;
     --color-white:#fbfcd4;
     --color-lightyellow:#eab539;
     --color-darkyellow:#fc7804;

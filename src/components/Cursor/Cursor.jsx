@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const cursor = ({ cursorVarient }) => {
+const Cursor = ({ variant }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useGSAP(() => {
@@ -29,7 +29,7 @@ const cursor = ({ cursorVarient }) => {
     gsap.to(".pointer", {
       duration: 0.1,
       ease: "power4.out",
-      backgroundColor:"white",
+      // backgroundColor:"white",
       scrollTrigger: {
         trigger: about,
         start: "top top",
@@ -76,9 +76,9 @@ const cursor = ({ cursorVarient }) => {
       <motion.div
         variants={variants}
         className="pointer"
-        animate={cursorVarient}
+        animate={variant}
       />
     </div>
   );
 };
-export default cursor;
+export default Cursor;

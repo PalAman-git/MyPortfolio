@@ -69,12 +69,12 @@ const MidSection = ({ timeline }) => {
   return (
     <div
       ref={middle}
-      className="main flex justify-start items-start flex-col absolute top-[27%]"
+      className="main flex justify-start items-start flex-col absolute top-[25%]"
     >
       <div className="hero-subtext flex justify-start font-normal text-3xl font-bebas">
         hi!
       </div>
-      <div className="-py-10 hero-text flex justify-center items-center -my-10 font-extrabold tracking-wider text-[11rem] font-bebas">
+      <div className="badaKrdo -py-10 hero-text flex justify-center items-center -my-10 font-extrabold tracking-wider text-[11rem] font-bebas">
         I'm Aman
       </div>
       <div className="hero-subtext font-light text-3xl font-bebas">
