@@ -5,7 +5,7 @@ import Portal from './Portal/Portal'
 const Environment = () => {
   return (
     <>
-      <Canvas camera={{ position: [0, 0.4, 0.25], fov: 50}}>
+      <Canvas className='canvas' camera={{ position: [0, 0.4, 0.25], fov: 50}}>
         {/* <ambientLight intensity={0.5} /> */}
         <color attach="background" args={['#eab539']} />
         <Portal />

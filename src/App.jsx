@@ -40,7 +40,7 @@ function App() {
       {/* <Parallax /> */}
       {/* <Footer /> */}
       {/* <div className="w-full h-[100vh] bg-black"></div> */}
-      {/* <Projects /> */}
+      <Projects />
     </>
   );
 }

@@ -23,7 +23,7 @@ const Projects = () => {
           markers:true,
           scrub: 0.3,
           pin: true,
-          pinSpacer: false,
+          pinnedContainer:ref.current
         },
       });
 

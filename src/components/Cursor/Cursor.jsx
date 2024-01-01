@@ -21,7 +21,6 @@ const Cursor = ({ variant }) => {
         end: "75% top",
         // markers: true,
         scrub: 1,
-        toggleClass: { targets: ".pointer", className: "hidden" },
       },
     });
 

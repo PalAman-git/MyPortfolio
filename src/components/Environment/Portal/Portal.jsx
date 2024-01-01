@@ -16,7 +16,7 @@ const PortalMaterial = shaderMaterial(
     {
       uTime: 0,
       uColorStart: new THREE.Color("#e07bec"),
-      uColorEnd: new THREE.Color("#4e0354"),
+      uColorEnd: new THREE.Color("#29032c"),
     },
     portalVertexShader,
     portalFragmentShader
@@ -33,8 +33,9 @@ const Portal = () => {
   const portal = useRef();
   const portalMaterial = useRef();
 
-    //getting the canvas element
+    //getting the trigger element
     const trigger = document.getElementById("hero");
+    const canvas = document.querySelector(".canvas");
     const tl = useRef();
 
     //controlling the camera with gsap
@@ -44,7 +45,7 @@ const Portal = () => {
           trigger: trigger,
           start: "top top",
           end: "bottom 50%",
-          // markers: true,
+          markers: true,
           scrub: 1,
           pin: true,
         },
