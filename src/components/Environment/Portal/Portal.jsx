@@ -15,8 +15,8 @@ gsap.registerPlugin(ScrollTrigger);
 const PortalMaterial = shaderMaterial(
     {
       uTime: 0,
-      uColorStart: new THREE.Color("#ffffff"),
-      uColorEnd: new THREE.Color("#0a0a0a"),
+      uColorStart: new THREE.Color("#e07bec"),
+      uColorEnd: new THREE.Color("#4e0354"),
     },
     portalVertexShader,
     portalFragmentShader
