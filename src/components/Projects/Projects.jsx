@@ -20,7 +20,7 @@ const Projects = () => {
           trigger: el,
           start: "top top",
           end: "100% 0%",
-          markers:true,
+          // markers:true,
           scrub: 0.3,
           pin: true,
           pinnedContainer:ref.current

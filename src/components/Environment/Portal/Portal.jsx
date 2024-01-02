@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 const PortalMaterial = shaderMaterial(
     {
       uTime: 0,
-      uColorStart: new THREE.Color("#e07bec"),
+      uColorStart: new THREE.Color("#eab539"),
       uColorEnd: new THREE.Color("#29032c"),
     },
     portalVertexShader,
@@ -35,7 +35,6 @@ const Portal = () => {
 
     //getting the trigger element
     const trigger = document.getElementById("hero");
-    const canvas = document.querySelector(".canvas");
     const tl = useRef();
 
     //controlling the camera with gsap
@@ -45,9 +44,10 @@ const Portal = () => {
           trigger: trigger,
           start: "top top",
           end: "bottom 50%",
-          markers: true,
+          // markers: true,
           scrub: 1,
           pin: true,
+          pinnedContainer:trigger,
         },
       });
   
