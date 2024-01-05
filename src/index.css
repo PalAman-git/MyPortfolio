@@ -25,6 +25,10 @@ html{
     font-size: 16px;
 }
 
+body{
+  background-color: var(--color-lightyellow);
+}
+
 .cursor{
     /* animation:1.2s infinite steps(1) blink; */
 }

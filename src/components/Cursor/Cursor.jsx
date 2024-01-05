@@ -45,8 +45,8 @@ const Cursor = ({ variant }) => {
     //function
     const mouseMove = (e) => {
       setMousePosition({
-        x: e.clientX - 12.5,
-        y: e.clientY - 12.5,
+        x: e.clientX - 17.5,
+        y: e.clientY - 17.5,
       });
     };
 
@@ -63,10 +63,10 @@ const Cursor = ({ variant }) => {
       y: mousePosition.y,
     },
     text: {
-      height: 150,
-      width: 150,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
+      height: 170,
+      width: 170,
+      x: mousePosition.x - 85,
+      y: mousePosition.y - 85,
     },
   };
 

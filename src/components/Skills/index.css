@@ -1,0 +1,31 @@
+.skills-container{
+    user-select: none;
+    position: relative;
+    height: 140vh;
+    width:100%;
+    overflow: hidden;
+    font-family: 'poppins';
+    font-weight: bold;
+    flex-direction: column;
+    line-height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-lightyellow);
+    z-index: 3;
+    color: var(--color-darkblack);
+}
+
+.strip{
+    font-size: 15vw;
+    width: 800vw;
+}
+
+.strip:nth-child(2n){
+    margin-left: -100%;
+}
+
+.strip span{
+    -webkit-text-stroke: 3px var(--color-darkblack);
+    color: transparent;
+}

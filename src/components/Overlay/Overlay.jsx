@@ -12,7 +12,6 @@ import MidSection from "./MidSection";
 const Overlay = () => {
   const words = [
     "Software Engineer",
-    "Devops Engineer",
     "Frontend Developer",
     "Creative Developer",
   ];

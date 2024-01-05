@@ -3,17 +3,18 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger);
+import Center from "./Center";
 
 const Projects = () => {
   const ref = useRef(null);
   const tl = useRef();
-  
 
   useGSAP(
     () => {
       //registering the plugin
+      gsap.registerPlugin(ScrollTrigger);
 
+      //animation for splitting the text from middle
       const el = ref.current;
       tl.current = gsap.timeline({
         scrollTrigger: {
@@ -23,7 +24,7 @@ const Projects = () => {
           // markers:true,
           scrub: 0.3,
           pin: true,
-          pinnedContainer:ref.current
+          pinnedContainer: ref.current,
         },
       });
 
@@ -32,7 +33,7 @@ const Projects = () => {
           ".topP",
           {
             top: "-51%",
-            duration: 5,
+            duration: 4,
           },
           "a"
         )
@@ -40,10 +41,77 @@ const Projects = () => {
           ".btmP",
           {
             bottom: "-51%",
-            duration: 5,
+            duration: 4,
+          },
+          "a"
+        )
+        .to(
+          ".top-h",
+          {
+            y: "20%",
+            duration: 4,
+          },
+          "a"
+        )
+        .to(
+          ".btm-h",
+          {
+            y: "-15%",
+            duration: 4,
           },
           "a"
         );
+
+        
+      //animation for the projects
+      const projects = document.querySelectorAll(".project");
+      projects.forEach((project) => {
+        gsap.set(project, { y: "120%" });
+      });
+
+      gsap.to(projects,{
+        y: "0%",
+        duration: 2,
+        stagger: 0.3,
+        delay:1,
+        scrollTrigger: {
+          trigger: el,
+          start: "top top",
+          toggleActions: "restart none none none",
+          scrub:false,
+        },
+      });
+
+
+      // text entering animation
+      gsap.set(".top-h", { x: "-120%" });
+      gsap.to(
+        ".top-h",
+        {
+          x: "0%",
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 70%",
+            toggleActions: "restart none none none",
+          },
+        },
+        "a"
+      );
+      gsap.set(".btm-h", { x: "-120%" });
+      gsap.to(
+        ".btm-h",
+        {
+          x: "0%",
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 70%",
+            toggleActions: "restart none none none",
+          },
+        },
+        "a"
+      );
     },
     { scope: ref }
   );
@@ -53,7 +121,7 @@ const Projects = () => {
       <div className="topP">
         <div className="top-h badaKrdo">PROJECTS</div>
       </div>
-      <div className="centerP"></div>
+      <Center />
       <div className="btmP">
         <div className="btm-h badaKrdo">PROJECTS</div>
       </div>

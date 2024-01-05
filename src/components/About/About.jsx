@@ -8,7 +8,7 @@ import rightArrow from './rightArrow.svg';
 
 const About = () => {
 
-  //for creating the loading animation
+  // for creating the loading animation
   // const tl = useRef(null);
   // const about = useRef(null);
   
@@ -17,7 +17,12 @@ const About = () => {
   //   gsap.registerPlugin(ScrollTrigger);
 
 
-  //   tl.current = gsap.timeline({});
+  //   tl.current = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: about.current,
+  //       start: "50% bottom",
+  //     }
+  //   });
   //   const bars = document.querySelectorAll(".bars");
   //   tl.current.to(bars,{width:"0%" ,duration:1.5,stagger:0.25,ease:"power2.in"})
   //   .from('.about-title',{opacity:0,x:-100,duration:0.5,ease:"power2.inOut"})
@@ -39,7 +44,7 @@ const About = () => {
       {/* for showing the actual content on the page */}
       <div className="about-container px-[20vw] font-roboto w-full h-full flex flex-col">
         <h1 className="badaKrdo about-title font-bold font-bebas mt-20 mb-5">ABOUT ME</h1>
-        <div className="about-content font-medium">
+        <div className="about-content font-medium -mt-6">
         I'm Aman, a creative frontend developer and software engineer. With a passion for turning ideas into captivating digital experiences, I specialize in crafting seamless and responsive websites.My coding practice revolves around creative solutions, adding that extra touch of magic to user interfaces. I thrive on challenges in software engineering, constantly staying updated on the latest technologies.Let's connect and create something amazing together!
         </div>
         <div className="about-buttons-container tracking-widest relative font-bebas font-bold mt-[5rem] flex items-center gap-5">

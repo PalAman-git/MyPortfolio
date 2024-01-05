@@ -4,7 +4,7 @@
 
 /* about button styling */
 .about-title{
-    font-size:clamp(6rem, 10vw, 10rem);/* for making the font size responsive*/
+    font-size:clamp(6rem, 12vw, 20rem);/* for making the font size responsive*/
 }
 .about-content{
     font-size: clamp(1rem, 1.4vw, 5rem);
