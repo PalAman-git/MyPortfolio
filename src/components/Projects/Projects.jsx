@@ -71,13 +71,14 @@ const Projects = () => {
 
       gsap.to(projects,{
         y: "0%",
-        duration: 2,
+        duration: 1,
         stagger: 0.3,
-        delay:1,
         scrollTrigger: {
           trigger: el,
-          start: "top top",
-          toggleActions: "restart none none none",
+          start: "35% top",
+          end:"35% top",
+          markers:true,
+          toggleActions: "restart none reverse none",
           scrub:false,
         },
       });

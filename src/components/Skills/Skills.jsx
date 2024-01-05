@@ -18,7 +18,7 @@ const Skills = () => {
           start: "40% bottom",
           end: "135% 10%",
           scrub: 1,
-          markers: true,
+          // markers: true,
           pinSpacing:false,
           pinnedContainer: skills.current,
         },
@@ -26,7 +26,9 @@ const Skills = () => {
       tl.current 
         .to(".strip-l", {
           marginLeft:"-100%",
-        },'a')
+        }
+        
+        ,'a')
         .to(".strip-r",
         {
           marginLeft:"0%",
