@@ -77,7 +77,7 @@ const Projects = () => {
           trigger: el,
           start: "35% top",
           end:"35% top",
-          markers:true,
+          // markers:true,
           toggleActions: "restart none reverse none",
           scrub:false,
         },

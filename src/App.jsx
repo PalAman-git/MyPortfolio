@@ -37,12 +37,12 @@ function App() {
       <Cursor variant={variant} />
       <Hero />
       <About />
-      {/* <Parallax /> */}
-      {/* <Footer /> */}
+      {/* <Parallax /> */}  
       <Projects />
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
       <Skills />
       <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div>
+      {/* <Footer /> */}
     </div>
   );
 }
