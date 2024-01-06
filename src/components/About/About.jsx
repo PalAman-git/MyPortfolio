@@ -30,7 +30,7 @@ const About = () => {
   // },{scope:about});
 
   return (
-    <div className="about select-none relative h-[100vh] overflow-hidden">
+    <div id="About" className="about select-none relative h-[100vh] overflow-hidden">
       {/* for creating the loading animation */}
 
       {/* <div className="about-loading absolute z-4 top-0 left-0 w-full h-full flex flex-col justify-center">

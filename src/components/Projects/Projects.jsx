@@ -4,9 +4,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Center from "./Center";
+import { forwardRef } from "react";
 
-const Projects = () => {
-  const ref = useRef(null);
+const Projects =forwardRef((props,ref) => {
   const tl = useRef();
 
   useGSAP(
@@ -90,7 +90,7 @@ const Projects = () => {
         ".top-h",
         {
           x: "0%",
-          duration: 1,
+          duration: 1.3,
           scrollTrigger: {
             trigger: el,
             start: "top 70%",
@@ -104,7 +104,7 @@ const Projects = () => {
         ".btm-h",
         {
           x: "0%",
-          duration: 1,
+          duration: 1.3,
           scrollTrigger: {
             trigger: el,
             start: "top 70%",
@@ -118,7 +118,7 @@ const Projects = () => {
   );
 
   return (
-    <div ref={ref} className="select-none projects-container">
+    <div id="Projects" ref={ref} className="select-none projects-container">
       <div className="topP">
         <div className="top-h badaKrdo">PROJECTS</div>
       </div>
@@ -128,5 +128,5 @@ const Projects = () => {
       </div>
     </div>
   );
-};
+});
 export default Projects;

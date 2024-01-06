@@ -1,11 +1,16 @@
 import "./App.css";
-import { Hero, About, Parallax,Footer,Cursor,Projects, Skills } from "./components";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Hero, About,Contact,Cursor,Projects, Skills } from "./components";
+import { useState,useEffect,useRef } from "react";
 
 function App() {
   const [variant,setVariant] = useState("default");
 
+  //for the navigation of the pages
+  const home = useRef(null);
+  const about = useRef(null);
+  const projects = useRef(null);
+  const skills = useRef(null);
+  
   
   useEffect(() => {
     //cursor bda krne ke liye
@@ -35,14 +40,15 @@ function App() {
   return (
     <div className="app-container">
       <Cursor variant={variant} />
-      <Hero />
-      <About />
+      
+      <Hero ref={home} />
+      <About ref={about} />
       {/* <Parallax /> */}  
-      <Projects />
+      <Projects ref={projects}/>
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
-      <Skills />
+      <Skills ref={skills}/>
       <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div>
-      {/* <Footer /> */}
+      <Contact />
     </div>
   );
 }
