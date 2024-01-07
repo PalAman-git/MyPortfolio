@@ -41,13 +41,12 @@ function App() {
     <div className="app-container">
       <Cursor variant={variant} />
       
-      <Hero ref={home} />
-      <About ref={about} />
+      <Hero/>
+      <About/>
       {/* <Parallax /> */}  
-      <Projects ref={projects}/>
+      <Projects/>
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
-      <Skills ref={skills}/>
-      <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div>
+      <Skills/>
       <Contact />
     </div>
   );

@@ -4,11 +4,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Center from "./Center";
-import { forwardRef } from "react";
 
-const Projects =forwardRef((props,ref) => {
+const Projects =() => {
   const tl = useRef();
-
+  const ref = useRef();
   useGSAP(
     () => {
       //registering the plugin
@@ -128,5 +127,5 @@ const Projects =forwardRef((props,ref) => {
       </div>
     </div>
   );
-});
+};
 export default Projects;

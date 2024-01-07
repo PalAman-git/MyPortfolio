@@ -45,8 +45,8 @@ const Cursor = ({ variant }) => {
     //function
     const mouseMove = (e) => {
       setMousePosition({
-        x: e.clientX - 17.5,
-        y: e.clientY - 17.5,
+        x: e.clientX - 10,
+        y: e.clientY - 10,
       });
     };
 
