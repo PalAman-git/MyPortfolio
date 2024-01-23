@@ -2,58 +2,75 @@ import "./index.css";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Contact = () => {
   const contact = useRef(null);
   const tl = useRef(null);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
 
-  },{scope:contact}) 
+      tl.current = gsap.timeline({
+        scrollTrigger:{
+          trigger:contact.current,
+          start:"center center",
+          end:"bottom center",
+          markers:true,
+          // scrub:true,
+        }
+      })
+
+      tl.current
+        .from('.social-heading',{
+          x:-100,
+          opacity:0,
+        })
+        .from('.copyright',{
+          x:-100,
+          opacity:0,
+        })
+    },
+    { scope: contact }
+  );
 
   return (
     <div ref={contact} id="Contact" className="contact">
       <div className="connection">
         <div className="left">
-          <span className="badaKrdo">Let's <br /> Connect</span>
+          <span className="badaKrdo">
+            Let's <br /> Connect
+          </span>
         </div>
         <div className="right">
           <form action="#">
             <div className="form-group">
-              <label htmlFor="name" className="label">Name</label>
-              <input
-                type="text"
-                id="name"
-                className="input"
-                required
-              />
+              <label htmlFor="name" className="label">
+                Name
+              </label>
+              <input type="text" id="name" className="input" required />
             </div>
             <div className="form-group">
-              <label htmlFor="email" className="label">Email</label>
-              <input
-                type="email"
-                id="email"
-                className="input"
-                required
-                />
+              <label htmlFor="email" className="label">
+                Email
+              </label>
+              <input type="email" id="email" className="input" required />
             </div>
             <div className="form-group">
-              <label htmlFor="message" className="label">Message</label>
-              <textarea
-                type="text"
-                id="message"
-                className="input"
-                required
-              />
+              <label htmlFor="message" className="label">
+                Message
+              </label>
+              <textarea type="text" id="message" className="input" required />
             </div>
-            <button type="submit" className="submit">Send</button>
+            <button type="submit" className="submit">
+              Send
+            </button>
           </form>
         </div>
       </div>
       <div className="socials">
-        socials
+        <div className="social-heading">socials</div>
         <div className="icons">
           <a
             href="https://github.com/PalAman-git"

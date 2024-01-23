@@ -1,5 +1,5 @@
 import "./App.css";
-import { Hero, About,Contact,Cursor,Projects, Skills } from "./components";
+import { Hero, About,Contact,Cursor,Projects, Skills,TechStack } from "./components";
 import { useState,useEffect,useRef } from "react";
 
 function App() {
@@ -45,9 +45,10 @@ function App() {
       <About/>
       {/* <Parallax /> */}  
       <Projects/>
-      {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
       <Skills/>
+      <TechStack/>
       <Contact />
+      {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
     </div>
   );
 }
