@@ -17,7 +17,7 @@ const Contact = () => {
           trigger:contact.current,
           start:"center center",
           end:"bottom center",
-          markers:true,
+          // markers:true,
           // scrub:true,
         }
       })

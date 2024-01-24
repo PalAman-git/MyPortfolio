@@ -46,9 +46,10 @@ function App() {
       {/* <Parallax /> */}  
       <Projects/>
       <Skills/>
+      {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
       <TechStack/>
+      {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
       <Contact />
-      {/* <div className="w-full relative z-3 h-[100vh] bg-[#eab539]"></div> */}
     </div>
   );
 }

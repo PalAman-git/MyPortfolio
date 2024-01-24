@@ -92,8 +92,8 @@ const Projects =() => {
           duration: 1.3,
           scrollTrigger: {
             trigger: el,
-            start: "top 70%",
-            toggleActions: "restart none none none",
+            start: "50% 50%",
+            markers:true,
           },
         },
         "a"
@@ -106,8 +106,7 @@ const Projects =() => {
           duration: 1.3,
           scrollTrigger: {
             trigger: el,
-            start: "top 70%",
-            toggleActions: "restart none none none",
+            start: "50% 50%",
           },
         },
         "a"

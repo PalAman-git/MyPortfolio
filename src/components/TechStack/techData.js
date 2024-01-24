@@ -1,83 +1,74 @@
 export const techData = [
     {
-        id:1,
         name:"HTML5",
         icon:"./html.svg"
     },
     {
-        id:2,
         name:"CSS3",
         icon:"./css.svg"
     },
     {
-        id:3,
-        name:"JavaScript",
-        icon:"./javascript.svg"
-    },
-    {
-        id:4,
-        name:"React",
-        icon:"./react.svg"
-    },
-    {
-        id:5,
-        name:"Docker",
-        icon:"./docker.svg"
-    },
-    {
-        id:6,
-        name:"Blender",
-        icon:"./blender.svg"
-    },
-    {
-        id:7,
-        name:"C++",
-        icon:"./cplus.svg"
-    },
-    {
-        id:8,
-        name:"Figma",
-        icon:"./figma.svg"
-    },
-    {
-        id:9,
-        name:"Firebase",
-        icon:"./firebase.svg"
-    },
-    {
-        id:10,
-        name:"Git",
-        icon:"./git.svg"
-    },
-    {
-        id:11,
-        name:"GreenSock",
-        icon:"./greenSock.svg"
-    },
-    {
-        id:12,
-        name:"MongoDB",
-        icon:"./mongoDB.svg"
-    },
-    {
-        id:13,
-        name:"NodeJS",
-        icon:"./nodejs.svg"
-    },
-    {
-        id:14,
         name:"Tailwind CSS",
         icon:"./tailwind.svg"
     },
     {
-        id:15,
-        name:"ThreeJS",
+        name:"JavaScript",
+        icon:"./javascript.svg"
+    },
+    {
+        name:"React",
+        icon:"./react.svg"
+    },
+    {
+        name:"Node JS",
+        icon:"./nodejs.svg"
+    },
+    {
+        name:"Express JS",
+        icon:"./express.svg"
+    },
+    {
+        name:"MongoDB",
+        icon:"./mongoDB.svg"
+    },
+    {
+        name:"Firebase",
+        icon:"./firebase.svg"
+    },
+    {
+        name:"Jest JS",
+        icon:"./jestJS.svg"
+    },
+    {
+        name:"Three JS",
         icon:"./threejs.svg"
     },
     {
-        id:16,
-        name:"ExpressJS",
-        icon:"./express.svg"
+        name:"GreenSock",
+        icon:"./greenSock.svg"
     },
-    
+    {
+        name:"Docker",
+        icon:"./docker.svg"
+    },
+    {
+        name:"Git",
+        icon:"./git.svg"
+    },
+    {
+        name:"Blender",
+        icon:"./blender.svg"
+    },
+    {
+        name:"C++",
+        icon:"./cplus.svg"
+    },
+    {
+        name:"Figma",
+        icon:"./figma.svg"
+    },
+    {
+        name:"webGL",
+        icon:"./webGL.svg"
+    },
 ]
