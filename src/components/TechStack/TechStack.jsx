@@ -25,6 +25,7 @@ const TechStack = () => {
 
         
     },{scope:techStack})
+    
   return (
     <div ref={techStack} className="techStack">
         {

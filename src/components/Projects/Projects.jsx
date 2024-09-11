@@ -92,8 +92,8 @@ const Projects =() => {
           duration: 1.3,
           scrollTrigger: {
             trigger: el,
-            start: "50% 50%",
-            markers:true,
+            start: "45% 50%",
+            // markers:true,
           },
         },
         "a"
@@ -106,7 +106,7 @@ const Projects =() => {
           duration: 1.3,
           scrollTrigger: {
             trigger: el,
-            start: "50% 50%",
+            start: "45% 50%",
           },
         },
         "a"

@@ -10,8 +10,8 @@ const Center = () => {
           <img src="./model/orange.jpg"/>
           <div className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius mollitia soluta veniam, neque voluptas, suscipit quaerat distinctio atque tempora alias deserunt sapiente adipisci excepturi, cupiditate dolor blanditiis corporis quam quidem.</div>
           <div className="buttons">
-            <div className="button">Source Code</div>
-            <div className="button">Live Site</div>
+            <div className="button">Code</div>
+            <div className="button">Live</div>
           </div>
         </div>
         <div className="project">
@@ -19,8 +19,8 @@ const Center = () => {
           <img src="./model/orange.jpg"/>
           <div className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius mollitia soluta veniam, neque voluptas, suscipit quaerat distinctio atque tempora alias deserunt sapiente adipisci excepturi, cupiditate dolor blanditiis corporis quam quidem.</div>
           <div className="buttons">
-            <div className="button">Source Code</div>
-            <div className="button">Live Site</div>
+            <div className="button">Code</div>
+            <div className="button">Live</div>
           </div>
         </div>
         <div className="project">
@@ -28,8 +28,8 @@ const Center = () => {
           <img src="./model/orange.jpg"/>
           <div className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius mollitia soluta veniam, neque voluptas, suscipit quaerat distinctio atque tempora alias deserunt sapiente adipisci excepturi, cupiditate dolor blanditiis corporis quam quidem.</div>
           <div className="buttons">
-            <div className="button">Source Code</div>
-            <div className="button">Live Site</div>
+            <div className="button">Code</div>
+            <div className="button">Live</div>
           </div>
         </div>
       </div>

@@ -1,46 +1,12 @@
 import "./style.css";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef,useState } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import leftArrow from './leftArroow.svg';
 import rightArrow from './rightArrow.svg';
 
 const About = () => {
 
-  // for creating the loading animation
-  // const tl = useRef(null);
-  // const about = useRef(null);
-  
-
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-
-  //   tl.current = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: about.current,
-  //       start: "50% bottom",
-  //     }
-  //   });
-  //   const bars = document.querySelectorAll(".bars");
-  //   tl.current.to(bars,{width:"0%" ,duration:1.5,stagger:0.25,ease:"power2.in"})
-  //   .from('.about-title',{opacity:0,x:-100,duration:0.5,ease:"power2.inOut"})
-    
-  // },{scope:about});
-
   return (
     <div id="About" className="about select-none relative h-[100vh] overflow-hidden">
-      {/* for creating the loading animation */}
-
-      {/* <div className="about-loading absolute z-4 top-0 left-0 w-full h-full flex flex-col justify-center">
-          <div className="bars"></div>
-          <div className="bars"></div>
-          <div className="bars"></div>
-          <div className="bars"></div>
-          <div className="bars"></div>
-      </div> */}
-
+      
       {/* for showing the actual content on the page */}
       <div className="about-container px-[20vw] font-roboto w-full h-full flex flex-col">
         <h1 className="badaKrdo about-title font-bold font-bebas mt-20 mb-5">ABOUT ME</h1>
