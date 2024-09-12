@@ -7,5 +7,6 @@ import Cursor from "./Cursor/Cursor";
 import Skills from "./Skills/Skills";
 import Navbar from "./Overlay/Navbar";
 import TechStack from "./TechStack/TechStack";
+import Submission from "./SubmissionPage/Submission";
 
-export {Hero,About,Parallax,Contact,Projects,Cursor,Skills,Navbar,TechStack};
+export {Hero,About,Parallax,Contact,Projects,Cursor,Skills,Navbar,TechStack,Submission};

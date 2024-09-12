@@ -35,6 +35,34 @@ const Contact = () => {
     { scope: contact }
   );
 
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        event.target.reset(); // Reset the form after successful submission
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  
   return (
     <div ref={contact} id="Contact" className="contact">
       <div className="connection">
@@ -44,7 +72,7 @@ const Contact = () => {
           </span>
         </div>
         <div className="right">
-          <form action="#">
+          <form action="#" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name" className="label">
                 Name
