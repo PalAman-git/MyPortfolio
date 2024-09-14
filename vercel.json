@@ -1,0 +1,9 @@
+{
+    "redirects": [
+      {
+        "source": "http://*",
+        "destination": "https://:path*",
+        "permanent": true
+      }
+    ]
+  }  
