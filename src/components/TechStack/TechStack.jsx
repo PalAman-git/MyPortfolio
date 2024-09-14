@@ -20,7 +20,7 @@ const TechStack = () => {
         }})
 
         tl.current
-            .from(techs,{opacity:0,scaleX:2,scaleY:2,duration:0.2,stagger:0.1})
+            .from(techs,{opacity:0,scaleX:2,scaleY:2,duration:0.3,stagger:0.1})
 
         
     },{scope:techStack})
