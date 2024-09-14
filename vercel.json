@@ -1,9 +1,10 @@
 {
     "redirects": [
       {
-        "source": "http://*",
-        "destination": "https://:path*",
+        "source": "/(.*)",
+        "destination": "https://:host/:path*",
         "permanent": true
       }
     ]
-  }  
+  }
+  
