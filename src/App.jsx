@@ -1,18 +1,19 @@
-import "./App.css";
 import {
   Hero,
   About,
   Contact,
-  Submission,
   Cursor,
   Projects,
   Skills,
   TechStack,
 } from "./components";
 import { useState, useEffect, useRef } from "react";
+import Loader from "./Loader";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [variant, setVariant] = useState("default");
+  const [loading, setLoading] = useState(true);
 
   //for the navigation of the pages
   const home = useRef(null);
@@ -44,19 +45,44 @@ function App() {
     };
   }, []);
 
-  return (
-        <div className="app-container">
-          <Cursor variant={variant} />
-          <Hero />
-          <About />
-          {/* <Parallax /> */}
-          <Projects />
-          <Skills />
-          {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
-          <TechStack />
-          {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
-          <Contact />
-        </div>
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
+  return loading ? (
+    <Loader />
+  ) : (
+    <div className="app-container">
+      <div>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            success: {
+              theme: {
+                primary: "#4aed88",
+              },
+            },
+          }}
+        ></Toaster>
+      </div>
+      <Cursor variant={variant} />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
+      <TechStack />
+      {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
+      <Contact />
+    </div>
   );
 }
 

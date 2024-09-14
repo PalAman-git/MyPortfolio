@@ -1,5 +1,4 @@
 import "./index.css"
-import { useEffect } from "react"
 import { techData } from "./techData"
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
@@ -21,7 +20,7 @@ const TechStack = () => {
         }})
 
         tl.current
-            .from(techs,{opacity:0,scaleX:2,scaleY:2,duration:0.4,stagger:0.2})
+            .from(techs,{opacity:0,scaleX:2,scaleY:2,duration:0.2,stagger:0.1})
 
         
     },{scope:techStack})

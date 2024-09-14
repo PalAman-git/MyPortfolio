@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const Cursor = ({ variant }) => {
+const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
 
   useGSAP(() => {
-    //portal dikhane ke wqt cursor hta diya
     const overlay = document.querySelector(".overlay");
     const about = document.querySelector(".about");
 
@@ -19,30 +19,24 @@ const Cursor = ({ variant }) => {
         trigger: overlay,
         start: "2% top",
         end: "75% top",
-        // markers: true,
         scrub: 1,
       },
     });
 
-    // second section pr wapas aane ke liey
     gsap.to(".pointer", {
       duration: 0.1,
       ease: "power4.out",
-      // backgroundColor:"white",
       scrollTrigger: {
         trigger: about,
         start: "top top",
         end: "bottom top",
-        // markers: true,
         toggleClass: { targets: ".pointer", className: "block" },
         scrub: 1,
-      }, 
+      },
     });
-
   });
 
   useEffect(() => {
-    //function
     const mouseMove = (e) => {
       setMousePosition({
         x: e.clientX - 10,
@@ -50,10 +44,21 @@ const Cursor = ({ variant }) => {
       });
     };
 
-    //event listners
+    // Adding hover effect for the .badaKrdo class
+    const hoverTargets = document.querySelectorAll(".badaKrdo");
+    hoverTargets.forEach(target => {
+      target.addEventListener("mouseenter", () => setCursorVariant("text"));
+      target.addEventListener("mouseleave", () => setCursorVariant("default"));
+    });
+
     window.addEventListener("mousemove", mouseMove);
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
+      hoverTargets.forEach(target => {
+        target.removeEventListener("mouseenter", () => setCursorVariant("text"));
+        target.removeEventListener("mouseleave", () => setCursorVariant("default"));
+      });
     };
   }, []);
 
@@ -75,9 +80,10 @@ const Cursor = ({ variant }) => {
       <motion.div
         variants={variants}
         className="pointer"
-        animate={variant}
+        animate={cursorVariant}
       />
     </div>
   );
 };
+
 export default Cursor;

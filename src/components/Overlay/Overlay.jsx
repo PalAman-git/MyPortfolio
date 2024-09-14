@@ -11,9 +11,9 @@ import MidSection from "./MidSection";
 
 const Overlay = () => {
   const words = [
-    "Software Engineer",
-    "Frontend Developer",
-    "Creative Developer",
+    "Software Engineering",
+    "Frontend Development",
+    "Creative Development",
   ];
   //type writer effect
   const typeWriterTimeline = useRef(null);

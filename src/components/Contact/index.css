@@ -171,3 +171,14 @@
 .submit:hover::after {
     left: 0;
 }
+
+input:-webkit-autofill {
+    background-color: #000 !important; /* Match your page's background color */
+    color: rgba(234, 181, 57, 1) !important; /* Ensure the text is visible */
+  }
+  
+  /* For Firefox */
+  input:-moz-autofill {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
