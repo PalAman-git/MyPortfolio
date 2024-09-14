@@ -43,7 +43,7 @@ const Contact = () => {
     const email = event.target.email.value;
     const message = event.target.message.value;
 
-    const submitPromise = fetch("http://localhost:5000/api/contact", {
+    const submitPromise = fetch("http://portfolio-server-env.eba-n9spypdw.us-east-1.elasticbeanstalk.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Contact = () => {
     toast
       .promise(submitPromise, {
         loading:"Sending message...",
-        success: "Message Sent! \n I will contact you soon! 🚀",
+        success: "I will contact you soon! 🚀",
         error: "Failed to send message. Please try again later.",
       })
       .then((response) => {
