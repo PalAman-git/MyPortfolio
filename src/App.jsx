@@ -15,12 +15,6 @@ function App() {
   const [variant, setVariant] = useState("default");
   const [loading, setLoading] = useState(true);
 
-  //for the navigation of the pages
-  const home = useRef(null);
-  const about = useRef(null);
-  const projects = useRef(null);
-  const skills = useRef(null);
-
   useEffect(() => {
     //cursor bda krne ke liye
     const mouseEnter = () => {
