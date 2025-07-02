@@ -2,7 +2,6 @@ import {
   Hero,
   About,
   Contact,
-  Cursor,
   Projects,
   Skills,
   TechStack,
@@ -16,13 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //cursor bda krne ke liye
-    const mouseEnter = () => {
-      setVariant("text");
-    };
-    const mouseLeave = () => {
-      setVariant("default");
-    };
 
     //selecting all the elements jha pr cursor bda krna hai
     const texts = document.querySelectorAll(".badaKrdo");
@@ -67,7 +59,6 @@ function App() {
           }}
         ></Toaster>
       </div>
-      <Cursor variant={variant} />
       <Hero />
       <About />
       <Projects />

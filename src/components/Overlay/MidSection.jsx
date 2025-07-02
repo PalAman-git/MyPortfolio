@@ -1,89 +1,68 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-const MidSection = ({ timeline }) => {
+const MidSection = ({ timeline, typeWriterRef }) => {
   const middle = useRef(null);
   const revealTl = useRef(null);
 
-  useGSAP(
-    () => {
-      //timeline for the text going down
-      const eye = document.querySelector(".eyeContainer");
-      timeline && timeline
-      .to(
-        ".hero-text",
-        {
-          duration:2,
-          y:180
-        },'a'
-      ).to(
-        ".hero-subtext",
-        {
-          duration:2,
-          y:180
-        },'a'
-      ).to(
-        eye,
-        {
-          duration:2,
-          y:-100,
-          opacity:0
-        },'a'
-      )
+  useGSAP(() => {
+    timeline &&
+      timeline
+        .to(".hero-text", { duration: 2, y: 180 }, "a")
+        .to(".hero-subtext", { duration: 2, y: 180 }, "a")
 
+    const scrollDownCircle = document.querySelector(".circle");
+    const navbar = document.querySelectorAll(".navbar");
 
-      //timeline for the overlayPage loading
-      const scrollDownCircle = document.querySelector(".circle");
-      const navbar = document.querySelectorAll(".navbar");
+    revealTl.current = gsap.timeline({});
 
-      revealTl.current = gsap.timeline({});
+    revealTl.current
+      .fromTo(".hero-text", { opacity: 0, y: "-100%" }, { opacity: 1, y: "0%", duration: 0.5 })
+      .fromTo(".hero-subtext", { opacity: 0, y: "-100%" }, { opacity: 1, y: "0%", duration: 0.5 })
+      .fromTo(navbar, { opacity: 0, y: "-100%" }, { opacity: 1, y: "0%", duration: 0.5 })
+      .fromTo(scrollDownCircle, { opacity: 0, y: "100%" }, { opacity: 1, y: "0%", duration: 1, ease: "elastic.out(2,0.4)" });
 
-      //loading animation for the text
-      revealTl.current
-        .fromTo(
-          ".hero-text",
-          {
-            opacity: 0,
-            y: "-100%",
-          },
-          {
-            opacity: 1,
-            y: "0%",
-            duration: 0.5,
-          }
-        )
-
-        //loading animation for the subtext
-        .fromTo(".hero-subtext", { opacity: 0,y:"-100%" }, { opacity: 1,y:"0%", duration: 0.5 })
-
-        .fromTo(navbar, { opacity: 0,y:"-100%" }, { opacity: 1, y:"0%", duration: 0.5 },)
-
-        //loading animation for the scrollDownCircle
-        .fromTo(scrollDownCircle, { opacity: 0,y:"100%" }, { opacity: 1, y:"0%", duration: 1,ease:"elastic.out(2,0.4)"})
-
-    },
-    { scope: middle, dependencies: [timeline, revealTl] }
-  );
+      
+  }, { scope: middle, dependencies: [timeline] });
 
   return (
     <div
       ref={middle}
-      className="main flex justify-start items-start flex-col absolute top-[25%]"
+      className="absolute top-[25%] px-4 sm:px-10 w-full flex flex-col items-center sm:items-start gap-y-4 text-center sm:text-left max-w-screen-sm mx-auto z-20"
     >
-      <div className="hero-subtext flex justify-start font-normal text-3xl font-bebas">
-        hi!
+      {/* Greeting */}
+      <div className="hero-subtext text-muted text-base sm:text-[1.5rem] font-bebas tracking-wide">
+        HI!
       </div>
-      <div className="badaKrdo -py-10 hero-text flex justify-center items-center -my-10 font-extrabold tracking-wider text-[11rem] font-bebas">
-        I'm Aman
+
+      {/* Main name */}
+      <div
+        className="hero-text font-extrabold tracking-wider font-bebas leading-none"
+        style={{
+          fontSize: "clamp(2.5rem, 10vw, 10rem)",
+          lineHeight: "1",
+        }}
+      >
+        I'M AMAN
       </div>
-      <div className="hero-subtext font-light text-3xl font-bebas">
-        A creative Developer having an eye on user interactions.
+
+      {/* Subtext with typewriter */}
+      <div
+        className="hero-subtext text-muted font-light font-bebas text-base sm:text-[1.5rem] leading-relaxed"
+      >
+        A creative developer with an eye on user interactions.
         <br />
-        Experience in <span className="typewriter font-bebas font-black"></span>
-        <span className="cursor font-bebas font-black">|</span>
+        Experienced in{" "}
+        <span
+          ref={typeWriterRef}
+          className="font-black inline-block"
+          style={{ fontSize: "clamp(1.1rem, 5vw, 1.5rem)" }}
+        ></span>
+        <span className="cursor font-black font-bebas">|</span>
       </div>
     </div>
   );
 };
+
 export default MidSection;
