@@ -6,46 +6,10 @@ import {
   Skills,
   TechStack,
 } from "./components";
-import { useState, useEffect, useRef } from "react";
-import Loader from "./Loader";
 import { Toaster } from "react-hot-toast";
 
 function App() {
-  const [variant, setVariant] = useState("default");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-
-    //selecting all the elements jha pr cursor bda krna hai
-    const texts = document.querySelectorAll(".badaKrdo");
-    texts.forEach((text) => {
-      text.addEventListener("mouseenter", mouseEnter);
-      text.addEventListener("mouseleave", mouseLeave);
-    });
-
-    return () => {
-      texts.forEach((text) => {
-        text.removeEventListener("mouseenter", mouseEnter);
-        text.removeEventListener("mouseleave", mouseLeave);
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setLoading(false);
-    };
-
-    window.addEventListener("load", handleLoad);
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <div className="app-container">
       <div>
         <Toaster
