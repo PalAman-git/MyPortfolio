@@ -86,15 +86,6 @@ const AboutMe = () => {
           >
             I love crafting micro-interactions and immersive interfaces.
           </p>
-
-          {/* Resume Button */}
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-block mt-4 w-fit px-5 py-2 rounded-xl bg-accent text-background font-semibold text-sm hover:bg-accent-hover transition"
-          >
-            Download Resume
-          </a>
         </div>
 
         {/* Creative Side Visual for Large Screens */}

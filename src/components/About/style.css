@@ -14,7 +14,7 @@
     width: clamp(5rem,10vw,15rem);
     position: relative;
     height: 3vw;
-    border: 1px solid var(--color-darkblack);
+    border: 1px solid var(--color-secondary);
     border-radius: 0.2rem;
     display: flex;
     color: var(--color-darkblack);
