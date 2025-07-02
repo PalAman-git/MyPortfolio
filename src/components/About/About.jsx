@@ -39,7 +39,7 @@ const AboutMe = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative bg-background text-text px-6 sm:px-10 md:px-20 py-24 max-w-7xl mx-auto overflow-hidden"
+      className="relative border-2 border-red-500 bg-background text-text px-6 sm:px-10 md:px-20 py-24 w-full mx-auto overflow-hidden"
     >
       {/* SVG Glow */}
       <div

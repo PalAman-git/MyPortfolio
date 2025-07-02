@@ -46,7 +46,7 @@ function App() {
   return loading ? (
     <Loader />
   ) : (
-    <div className="app-container">
+    <div className="app-container border-2 border-red-500">
       <div>
         <Toaster
           position="top-center"
