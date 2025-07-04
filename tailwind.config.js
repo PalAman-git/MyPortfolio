@@ -5,8 +5,10 @@ export default {
     extend: {
       colors: {
         background:"#000",
-        text:"#eab539",
-        secondary:"#b586f8"
+        text:"#eab539",//eab539
+        muted_yellow:"#d1a832",
+        muted_black:"#121212",
+        purple:"#b586f8"
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

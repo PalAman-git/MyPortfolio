@@ -40,7 +40,7 @@ const Skills = () => {
 
   return (
     <div ref={skills} className="skills-container">
-      <div className="strip strip-l badaKrdo">
+      <div className="strip strip-l">
         <h1>
           {" "}
           SKILLS <span>SKILLS</span> SKILLS <span>SKILLS</span> SKILLS{" "}
@@ -48,7 +48,7 @@ const Skills = () => {
           <span>SKILLS</span> SKILLS{" "}
         </h1>
       </div>
-      <div className="strip strip-r badaKrdo">
+      <div className="strip strip-r">
         <h1>
           {" "}
           SKILLS <span>SKILLS</span> SKILLS <span>SKILLS</span> SKILLS{" "}
@@ -56,7 +56,7 @@ const Skills = () => {
           <span>SKILLS</span> SKILLS{" "}
         </h1>
       </div>
-      <div className="strip strip-l badaKrdo">
+      <div className="strip strip-l">
         <h1>
           {" "}
           SKILLS <span>SKILLS</span> SKILLS <span>SKILLS</span> SKILLS{" "}
@@ -64,7 +64,7 @@ const Skills = () => {
           <span>SKILLS</span> SKILLS{" "}
         </h1>
       </div>
-      <div className="strip strip-r badaKrdo">
+      <div className="strip strip-r">
         <h1>
           {" "}
           SKILLS <span>SKILLS</span> SKILLS <span>SKILLS</span> SKILLS{" "}

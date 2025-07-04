@@ -5,10 +5,14 @@ import {
   Projects,
   Skills,
   TechStack,
+  MobileProjects,
+  MobileSkills,
 } from "./components";
 import { Toaster } from "react-hot-toast";
+import { useIsMobile } from "./hooks/useIsMobile";
 
 function App() {
+  const isMobile = useIsMobile();
   return (
     <div className="app-container">
       <div>
@@ -25,8 +29,8 @@ function App() {
       </div>
       <Hero />
       <About />
-      <Projects />
-      <Skills />
+      {isMobile ? <MobileProjects /> : <Projects />}
+      {isMobile ? <MobileSkills /> : <Skills />}
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
       <TechStack />
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}

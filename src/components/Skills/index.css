@@ -29,3 +29,40 @@
     -webkit-text-stroke: 3px var(--color-darkblack);
     color: transparent;
 }
+
+/* For mobile screens */
+
+.mobile-skills-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #eab539;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: 2;
+    user-select: none;
+  }
+  
+  .m-strip {
+    font-size: 12vw;
+    font-weight: bold;
+    width: 300vw;
+    white-space: nowrap;
+  }
+  
+  .m-strip:nth-child(2n) {
+    margin-left: -80%;
+  }
+  
+  .m-strip span {
+    -webkit-text-stroke: 1px #eab539;
+    color: transparent;
+  }
+  

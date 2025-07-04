@@ -49,7 +49,7 @@ const MidSection = ({ timeline, typeWriterRef }) => {
 
       {/* Subtext with typewriter */}
       <div
-        className="hero-subtext text-muted font-light font-bebas text-base sm:text-[1.5rem] leading-relaxed"
+        className="hero-subtext text-muted_black font-light font-bebas text-base sm:text-[1.5rem] leading-relaxed"
       >
         A creative developer with an eye on user interactions.
         <br />

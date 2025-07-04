@@ -121,14 +121,14 @@ const MobileOverlay = () => {
           Skilled in{" "}
           <span
             ref={typeWriterRef}
-            className="font-bold inline-block text-secondary"
+            className="font-bold inline-block text-purple"
           ></span>
           <span className="cursor font-black text-accent">|</span>
         </p>
 
         {/* CTA Button */}
         <button
-          className="mobile-cta mt-4 px-5 py-2 text-sm font-semibold rounded-xl bg-accent hover:bg-accent-hover text-text transition"
+          className="mobile-cta mt-4 px-5 py-2 text-sm font-semibold rounded-xl bg-purple hover:bg-accent-hover text-text transition"
           onClick={() => {
             const section = document.getElementById("work");
             section?.scrollIntoView({ behavior: "smooth" });
