@@ -7,6 +7,7 @@ import {
   TechStack,
   MobileProjects,
   MobileSkills,
+  MobileTechStack,
 } from "./components";
 import { Toaster } from "react-hot-toast";
 import { useIsMobile } from "./hooks/useIsMobile";
@@ -32,7 +33,7 @@ function App() {
       {isMobile ? <MobileProjects /> : <Projects />}
       {isMobile ? <MobileSkills /> : <Skills />}
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
-      <TechStack />
+      {isMobile ? <MobileTechStack /> : <TechStack />}
       {/* <div className="w-full relative z-3 h-[100vh] bg-[#000000]"></div> */}
       <Contact />
     </div>

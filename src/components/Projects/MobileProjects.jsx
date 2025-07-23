@@ -53,40 +53,40 @@ const MobileProjects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="rounded-2xl overflow-hidden border border-muted_black shadow-md"
+            className="rounded-2xl bg-[#000]/80 backdrop-blur-md p-5 space-y-4 transition duration-300 hover:scale-[1.01]"
           >
-            <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+            <img
+              src={project.image}
+              alt={`${project.title} Preview`}
+              loading="lazy"
+              className="w-full h-auto rounded-xl object-cover"
+            />
 
-              <img
-                src={project.image}
-                alt={`${project.title} Preview`}
-                loading="lazy"
-                className="w-full h-auto rounded-md mb-4 object-cover"
-              />
+            <h3 className="text-lg font-semibold text-[#eab539] tracking-wide">
+              {project.title}
+            </h3>
 
-              <p className="text-[#b3a678] text-sm leading-relaxed mb-4">
-                {project.description}
-              </p>
+            <p className="text-sm text-[#b3a678] leading-relaxed">
+              {project.description}
+            </p>
 
-              <div className="flex gap-4">
-                <a
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center bg-muted_black text-[#eab539] py-2 rounded-md border border-[#3a3a3a] hover:border-[#eab539] transition"
-                >
-                  Code
-                </a>
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center bg-muted_black text-[#eab539] py-2 rounded-md border border-[#3a3a3a] hover:border-[#eab539] transition"
-                >
-                  Live
-                </a>
-              </div>
+            <div className="flex justify-between pt-2 text-sm font-medium text-[#eab539]">
+              <a
+                href={project.codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-white transition"
+              >
+                View Code
+              </a>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-white transition"
+              >
+                Live Demo
+              </a>
             </div>
           </div>
         ))}
