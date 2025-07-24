@@ -36,8 +36,8 @@ export const techData = [
         icon:"./firebase.svg"
     },
     {
-        name:"Jest JS",
-        icon:"./jestJS.svg"
+        name:"Next JS",
+        icon:"./nextjs.svg"
     },
     {
         name:"Three JS",

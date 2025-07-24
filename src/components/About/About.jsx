@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   const sectionRef = useRef(null);
   const textRef = useRef([]);
-  const cardRefs = useRef([]);
 
   const values = [
     {
@@ -29,7 +28,7 @@ const AboutMe = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(textRef.current, {
+      gsap.from(".stagger-content", {
         y: 40,
         opacity: 0,
         duration: 0.8,
@@ -37,30 +36,10 @@ const AboutMe = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "80% 85%",
+          // markers: true,
         },
       });
-      gsap.to("#about-blob", {
-        y: 20,
-        scale: 1.03,
-        duration: 3,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-      // setTimeout(() => {
-      // gsap.from(cardRefs.current, {
-      //   y: 30,
-      //   opacity: 0,
-      //   duration: 0.6,
-      //   stagger: 0.15,
-      //   ease: "power2.out",
-      //   scrollTrigger: {
-      //     trigger: sectionRef.current,
-      //     start: "top 20%",
-      //   },
-      // });
-      // }, 0);
     }, sectionRef);
 
     return () => ctx.revert();
@@ -72,14 +51,20 @@ const AboutMe = () => {
       ref={sectionRef}
       className="relative min-h-screen bg-background text-text overflow-hidden px-6 sm:px-10 md:px-20 py-32 flex items-center justify-center"
     >
-      {/* Background Glow */}
+      {/* Radial background */}
       <div
-        id="about-spark"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
-          background:
-            "radial-gradient(circle, #eab53922 0%, rgba(0,0,0,0) 70%)",
-          filter: "blur(80px)",
+          background: `
+      radial-gradient(
+        circle at center,
+        rgba(234, 181, 57, 0.12) 0%,
+        rgba(234, 181, 57, 0.06) 40%,
+        rgba(234, 181, 57, 0.03) 70%,
+        transparent 100%
+      )
+    `,
+          filter: "blur(40px)",
         }}
       />
 
@@ -89,12 +74,12 @@ const AboutMe = () => {
         <div className="flex-1 flex flex-col gap-y-6 text-center lg:text-left">
           <h2
             ref={(el) => (textRef.current[0] = el)}
-            className="text-5xl sm:text-6xl font-extrabold text-text tracking-tight"
+            className="text-5xl mb-5 sm:text-6xl font-extrabold text-text tracking-tight stagger-content"
           >
             Beyond the Code
           </h2>
 
-          <p className="text-muted sm:hidden text-lg sm:text-xl leading-relaxed">
+          <p className="text-muted_yellow mb-4 sm:hidden text-lg sm:text-xl leading-relaxed stagger-content">
             I design digital moments — not just components. My goal is to make
             users feel <em>something</em> with every scroll, click, and tap.
           </p>
@@ -102,14 +87,14 @@ const AboutMe = () => {
           <div className="hidden sm:block">
             <p
               ref={(el) => (textRef.current[1] = el)}
-              className="text-muted_yellow text-xl sm:text-2xl leading-relaxed"
+              className="text-muted_yellow mb-4 text-xl sm:text-2xl leading-relaxed stagger-content"
             >
               I design digital moments — not just components. My goal is to make
               users feel *something* with every scroll, click, and tap.
             </p>
             <p
               ref={(el) => (textRef.current[2] = el)}
-              className="text-muted_yellow text-lg sm:text-xl leading-relaxed"
+              className="text-muted_yellow mb-4  text-lg sm:text-xl leading-relaxed stagger-content"
             >
               Whether it's a smooth page transition, a playful hover animation,
               or a clever UI interaction — I'm obsessed with the little things
@@ -117,17 +102,17 @@ const AboutMe = () => {
             </p>
             <p
               ref={(el) => (textRef.current[3] = el)}
-              className="text-muted_yellow text-lg sm:text-xl leading-relaxed"
+              className="text-muted_yellow mb-4  text-lg sm:text-xl leading-relaxed stagger-content"
             >
               My toolkit? JavaScript, React, GSAP, and a sprinkle of obsession.
               Performance matters, but so does emotion.
             </p>
             <p
               ref={(el) => (textRef.current[4] = el)}
-              className="text-muted_yellow text-lg sm:text-xl leading-relaxed"
+              className="text-muted_yellow mb-4 text-lg sm:text-xl leading-relaxed stagger-content"
             >
               Right now, I'm building{" "}
-              <span className="text-purple font-medium">Nexora</span> — an
+              <span className="text-muted_yellow font-bold">Nexora</span> — an
               AI-powered proposal generator that thinks like you do.
             </p>
           </div>
@@ -137,8 +122,9 @@ const AboutMe = () => {
               <div
                 key={i}
                 // ref={(el) => (cardRefs.current[i] = el)}
-                className="group border border-muted_black rounded-2xl p-6 bg-surface/50 backdrop-blur-md transition-all duration-300 ease-in-out
-                hover:border-accent hover:shadow-[0_0_20px_#eab53933] hover:scale-[1.02] hover:bg-surface/70"
+                className="group border border-text rounded-2xl p-6 bg-surface/50 backdrop-blur-md transition-all duration-300 ease-in-out
+                hover:border-accent hover:shadow-[0_0_20px_#eab53933] hover:scale-[1.02] hover:bg-surface/70
+                "
               >
                 <div className="mb-4 flex items-center justify-start transition-transform duration-300 group-hover:scale-105 group-hover:brightness-125">
                   {val.icon}
@@ -154,20 +140,6 @@ const AboutMe = () => {
             ))}
           </div>
         </div>
-
-        {/* Animated SVG Visual */}
-        <div
-          id="about-blob"
-          className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[480px] h-[480px] rounded-full opacity-70 blur-[100px] pointer-events-none z-0"
-          style={{
-            background: `
-      radial-gradient(circle at 30% 30%, #eab53933, transparent 70%),
-      radial-gradient(circle at 70% 70%, #8e8dfa22, transparent 80%),
-      radial-gradient(circle at center, #ffffff10, transparent 80%)
-    `,
-            mixBlendMode: "screen",
-          }}
-        />
       </div>
     </section>
   );

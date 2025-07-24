@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     /* height: 100vh; */
     transform-style: preserve-3d;
-    background-color: var(--color-lightyellow);
+    background-color: var(--color-background);
     /* border: 2px solid black ; */
 }
 .tech-img{
